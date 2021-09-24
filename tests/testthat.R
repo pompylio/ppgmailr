@@ -14,3 +14,5 @@ test_that("Escrever e enviar mensagens",
           pgm_write(from = gm_profile()$email, to = gm_profile()$email, subject = "ppgmailr test", send = TRUE))
 test_that("Listar mensagens",
           pgm_listmessages(label = "INBOX"))
+test_that("Criar tabela html para o email",
+          pgm_tablehtml(x = data.frame("id"=1, "name"="tablehtml"), width = c(200,300)))
