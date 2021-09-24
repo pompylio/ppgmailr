@@ -12,4 +12,5 @@ test_that("Extrair dados das mensagens",
                    message_id = pgm_messages(label_ids = pgm_labels(label = "INBOX")$id$id, num_results = 1)))
 test_that("Escrever e enviar mensagens", 
           pgm_write(from = gm_profile()$email, to = gm_profile()$email, subject = "ppgmailr test", send = TRUE))
-
+test_that("Listar mensagens",
+          pgm_listmessages(label = "INBOX"))

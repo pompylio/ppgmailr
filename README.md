@@ -1,2 +1,2 @@
 # ppgmailr
-Funções complementares ao pacote gmailr
+Funções complementares ao pacote gmailr de uso pessoal

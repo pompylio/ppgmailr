@@ -97,3 +97,20 @@ pgm_write <- function(from, to, subject = NULL, body = NULL, file = NULL, send =
   }
   return(x)
 }
+pgm_listmessages <- function(label, num_results = 1, num_results_by = "thread"){
+  id_label <- pgm_labels(label = label)
+  if(nrow(id_label)>1) 
+    stop("Enter a unique label")
+  if(num_results_by=="all"){
+    id_thread <- pgm_threads(label_id = id_label$id, num_results = num_results)
+    id_message <- pgm_messages(label_ids = id_label$id, num_results = num_results)
+  } else if(num_results_by=="thread"){
+    id_thread <- pgm_threads(label_id = id_label$id, num_results = num_results)
+    id_message <- pgm_messages(label_ids = id_label$id)
+  } else if(num_results_by=="message"){
+    id_thread <- pgm_threads(label_id = id_label$id)
+    id_message <- pgm_messages(label_ids = id_label$id, num_results = num_results)
+  }
+  messages <- pgm_read(thread_id = id_thread, message_id = id_message)
+  return(messages)
+}
