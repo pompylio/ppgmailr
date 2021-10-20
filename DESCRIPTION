@@ -4,12 +4,11 @@ Title: Additional functions to gmailr
 Version: 0.0.0.0000
 Author: Pompylio Jeronimo de Lima
 Maintainer: Pompylio Jeronimo de Lima <pompylio.lima@gmail.com>
-Description: Additional functions to gmailr
-License: MIT License
+Description: Additional functions to gmailr.
+License: MIT + file LICENSE
 Encoding: UTF-8
 LazyData: true
 Suggests: testthat
 RoxygenNote: 7.1.1
-Imports: gmailr, tableHTML
-Depends: 
-    R (>= 3.0)
+Imports: gmailr, httr, tableHTML
+Depends: R (>= 3.0.0)
