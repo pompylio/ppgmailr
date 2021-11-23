@@ -55,7 +55,8 @@ pgm_labels <- function(label, type, ...){
   x <- data.frame(
     id = labels[names(labels)=="labels.id"],
     name = labels[names(labels)=="labels.name"],
-    type = labels[names(labels)=="labels.type"])
+    type = labels[names(labels)=="labels.type"],
+    stringsAsFactors = FALSE)
   if(!missing(label))
     x <- x[grepl(pattern = label, x = x$name),]
   if(!missing(type))
